@@ -17,14 +17,14 @@ function AuthProvider({ children }) {
       localStorage.setItem("@rocketnotes:token", token);
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      
+
       setData({ user, token })
 
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
       } else {
-        alert("Erro desconhecido, tente novamente mais tarde");
+        alert("Não foi possível realizar o login, tente novamente mais tarde.");
       }
     }
   }
@@ -34,6 +34,32 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@rocketnotes:user");
 
     setData({});
+  }
+
+  async function updateProfile({ user, avatarFile }) {
+    try {
+
+      if (avatarFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
+
+        const response = await api.patch("/users/avatar", fileUploadForm);
+        user.avatar = response.data.avatar;
+      }
+
+      await api.put("/users", user);
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+
+      setData({ user, token: data.token });
+      alert("Perfil atualizado com sucesso!");
+
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível atualizar o perfil, tente novamente mais tarde.");
+      }
+    }
   }
 
   useEffect(() => {
@@ -54,6 +80,7 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={{
       signIn,
       signOut,
+      updateProfile,
       user: data.user
     }}>
       {children}
