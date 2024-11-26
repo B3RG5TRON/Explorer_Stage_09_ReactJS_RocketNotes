@@ -44,6 +44,18 @@ export function New() {
   }
 
   async function handleNewNote() {
+    if (!title) {
+      return alert("Adicione um título antes de salvar a nota!");
+    }
+
+    if (newLink) {
+      return alert("Adicione um novo link antes de salvar a nota! Verifique se você clicou no botão de adicionar link ou deixe o campo vazio.");
+    }
+
+    if (newTag) {
+      return alert("Adicione a nova tag antes de salvar a nota! Verifique se você clicou no botão de adicionar tag ou deixe o campo vazio.");
+    }
+
     await api.post("/notes", {
       title,
       description,
