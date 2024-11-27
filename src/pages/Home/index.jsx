@@ -44,8 +44,8 @@ export function Home() {
         <li>
           <ButtonText
             title="Todos"
-            onClick={() => handleSelectTag("all")}
-            isActive={tagsSelected.length === 0}
+            $isActive={tagsSelected.length === 0}
+            onClick={() => handleTagSelected("all")}
           />
         </li>
         {
@@ -54,7 +54,7 @@ export function Home() {
               <ButtonText
                 title={tag.name}
                 onClick={() => handleSelectTag(tag.name)}
-                isActive={tagsSelected.includes(tag.name)}
+                $isActive={tagsSelected.includes(tag.name)}
               />
             </li>
           ))
@@ -62,7 +62,10 @@ export function Home() {
       </Menu>
 
       <Search>
-        <Input placeholder="Pesquisar pelo título" icon={FiSearch} />
+        <Input
+          placeholder="Pesquisar pelo título" icon={FiSearch}
+        />
+
       </Search>
 
       <Content>
