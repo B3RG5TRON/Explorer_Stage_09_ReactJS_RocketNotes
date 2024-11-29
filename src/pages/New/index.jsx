@@ -52,7 +52,7 @@ export function New() {
       return alert("Adicione um novo link antes de salvar a nota! Verifique se você clicou no botão de adicionar link ou deixe o campo vazio.");
     }
 
-    if (newTag) {
+    if (newTags) {
       return alert("Adicione a nova tag antes de salvar a nota! Verifique se você clicou no botão de adicionar tag ou deixe o campo vazio.");
     }
 
