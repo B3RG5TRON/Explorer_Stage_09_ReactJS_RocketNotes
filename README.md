@@ -5,7 +5,7 @@
 
 ## 💻 About
 
-**Este repositório se trata do front-end da aplicação RocketNotes** ([link do back-end](https://github.com/B3RG5TRON/Explorer_Stage_08_NodeJS_RocketNotes_API)). Esta aplicação disponibiliza aos usuários a possibilidade de realizar um cadastrar e gerar anotações sobre assuntos que desejar.
+**Este repositório se trata do front-end da aplicação RocketNotes** ([link do back-end](https://github.com/B3RG5TRON/Explorer_Stage_08_NodeJS_RocketNotes_API)). Esta aplicação disponibiliza aos usuários a possibilidade de realizar um cadastro e gerar anotações sobre assuntos que desejar.
 
 Vale ressaltar que este projeto faz parte da trilha/curso **Explorer** oferecida pela [Rocketseat](https://www.rocketseat.com.br/) para quem tiver interesse.
 
