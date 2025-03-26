@@ -117,7 +117,7 @@ $ npm run dev
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([Vite](https://vitejs.dev/)  +  [TypeScript](https://www.typescriptlang.org/))
+#### **Website**  ([Vite](https://vitejs.dev/)
 
 -   **[Styled-Components](https://styled-components.com/)**
 -   **[React-Toastify](https://fkhadra.github.io/react-toastify/introduction)**
